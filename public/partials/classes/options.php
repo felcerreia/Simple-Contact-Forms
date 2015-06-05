@@ -1,6 +1,6 @@
 <?php
 
-class Options {
+class scf_Options {
 
 	private $defaultSettings;
 	private $defaultOptions;

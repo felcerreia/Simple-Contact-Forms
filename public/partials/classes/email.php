@@ -1,6 +1,6 @@
 <?php
 
-class Email {
+class scf_Email {
 
 
 

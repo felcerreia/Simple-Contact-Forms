@@ -1,6 +1,6 @@
 <?php
 
-class FormConstructor {
+class scf_FormConstructor {
 
 	protected $options;
 	private $fields;
@@ -58,9 +58,9 @@ class FormConstructor {
 
 
 		// Set the classes required
-		$contentClass = new Content();
-		$emailClass = new Email();
-		$optionClass = new Options();
+		$contentClass = new scf_Content();
+		$emailClass = new scf_Email();
+		$optionClass = new scf_Options();
 
 		// Set the options and settings
 		$this->options = $optionClass->get($passedOptions);
@@ -72,7 +72,7 @@ class FormConstructor {
 		$this->replacePlaceholders();
 
 		// Create array of all fields
-		$this->fields = Fields::getFields($optionClass->inputtedfields, $this->options, false);
+		$this->fields = Fields::getSCFFields($optionClass->inputtedfields, $this->options, false);
 
 		// Don't show the form if there aren't any fields set
 		if( count($this->fields) < 2 ) return false;
@@ -102,7 +102,7 @@ class FormConstructor {
 
 			// Reset the values from the fields
 			$this->fields = array();
-			$this->fields = Fields::getFields($optionClass->inputtedfields, $this->options, true);
+			$this->fields = Fields::getSCFFields($optionClass->inputtedfields, $this->options, true);
 
 		}
 

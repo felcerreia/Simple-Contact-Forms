@@ -1,6 +1,6 @@
 <?php
 
-class Content {
+class scf_Content {
 
 
 

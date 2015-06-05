@@ -33,7 +33,7 @@ if( !empty($_POST) ) $options->set();
 $vals = $options->get();
 
 include ('Form_List_Table.php');
-$wp_list_table = new Form_List_Table();
+$wp_list_table = new scf_Form_List_Table();
 $wp_list_table->setPassedOptions($vals);
 $wp_list_table->prepare_items();
 

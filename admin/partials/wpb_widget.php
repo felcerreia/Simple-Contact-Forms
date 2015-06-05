@@ -1,16 +1,16 @@
 <?php
-class wpb_widget extends WP_Widget {
+class scf_wpb_widget extends WP_Widget {
 
     function __construct() {
         parent::__construct(
             // Base ID of your widget
-            'wpb_widget', 
+            'scf_wpb_widget', 
 
             // Widget name will appear in UI
-            __('Simple Contact Forms', 'enquiry_form'), 
+            __('Simple Contact Forms', 'scf_enquiry_form'), 
 
             // Widget description
-            array( 'description' => __( 'Plugin Widget', 'enquiry_form' ), ) 
+            array( 'description' => __( 'Plugin Widget', 'scf_enquiry_form' ), ) 
         );
     }
 
@@ -42,11 +42,11 @@ class wpb_widget extends WP_Widget {
     // Widget Backend 
     public function form( $instance ) {
 
-        $title = isset( $instance[ 'form_title' ] ) ? $instance[ 'form_title' ] : __( 'Enquire now!', 'enquiry_form' );
+        $title = isset( $instance[ 'form_title' ] ) ? $instance[ 'form_title' ] : __( 'Enquire now!', 'scf_enquiry_form' );
         $button = isset( $instance[ 'button' ] ) ? $instance[ 'button' ] : false;
-        $button_text = isset( $instance[ 'button_text' ] ) ? $instance[ 'button_text' ] : __( 'Get in touch!', 'enquiry_form' );
+        $button_text = isset( $instance[ 'button_text' ] ) ? $instance[ 'button_text' ] : __( 'Get in touch!', 'scf_enquiry_form' );
         $form_collapse = isset( $instance[ 'form_collapse' ] ) ? $instance[ 'form_collapse' ] : false;
-        $email_subject = isset( $instance[ 'email_subject' ] ) ? $instance[ 'email_subject' ] : __( 'Website Enquiry', 'enquiry_form' );
+        $email_subject = isset( $instance[ 'email_subject' ] ) ? $instance[ 'email_subject' ] : __( 'Website Enquiry', 'scf_enquiry_form' );
 
         // Widget admin form
         ?>
@@ -101,4 +101,4 @@ class wpb_widget extends WP_Widget {
 
 } // Class wpb_widget ends here
 
-register_widget( 'wpb_widget' );
+register_widget( 'scf_wpb_widget' );

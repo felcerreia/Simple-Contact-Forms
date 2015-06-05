@@ -1,6 +1,6 @@
 <?php 
 
-class Form_List_Table extends WP_List_Table {
+class scf_Form_List_Table extends WP_List_Table {
 
 	private $options;
 

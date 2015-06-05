@@ -1,6 +1,6 @@
 <?php
 
-class FormValidation {
+class scf_FormValidation {
 
 
 

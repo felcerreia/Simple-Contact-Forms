@@ -30,7 +30,7 @@
 	 */
 	$(document).ready(function() {
 
-		function do_hidden_stuff(that) {
+		function scf_do_hidden_stuff(that) {
 
 			if( that.attr('type') == 'checkbox' ) {
 				if( that.is(':checked') ) {
@@ -53,12 +53,12 @@
 		}
 
 		$('.do_hide').change(function(){
-			do_hidden_stuff( $(this) );
+			scf_do_hidden_stuff( $(this) );
 		});
 
 		$(window).load(function() {
 			$('.do_hide').each(function() {
-				do_hidden_stuff( $(this) );
+				scf_do_hidden_stuff( $(this) );
 			})
 		});
 
@@ -83,20 +83,20 @@
 
 
 
-		var getRowNumber = function() {
+		var scf_getRowNumber = function() {
 			return $('.fields_row').length + 1;
 		};
 
-		var getOptionNumber = function(row) {
+		var scf_getOptionNumber = function(row) {
 			return $('#fields_' + row + ' .option-field').length + 1;
 		};
 
-		var optionTemplate = function(rN, oN, val) {
+		var scf_optionTemplate = function(rN, oN, val) {
 			if( !val ) val = '';
 			return '<div class="option-field" id="options_' + oN + '"><input name="fields[' + rN + '][options][' + oN + ']" value="' + val + '" class="all-options" /><input type="button" class="delete-option button-secondary" value="-" /></div>';
 		};
 
-		var rowTemplate = function(rN, vals) {
+		var scf_rowTemplate = function(rN, vals) {
 			if( !vals ) vals = {
 				label: '',
 				type: 'text',
@@ -122,7 +122,7 @@
 			'</tr>';
 		}
 
-		function updateRowNumbers() {
+		function scf_updateRowNumbers() {
 			$(table).find('.fields_row').each(function(r) {
 				var el = $(this),
 					IDtemp = el.attr('id').split("_")[0],
@@ -137,7 +137,7 @@
 			})
 		}
 
-		function updateOptionNumbers(row) {
+		function scf_updateOptionNumbers(row) {
 			$(table + ' #fields_' + row + ' .option_fields').find('.option-field').each(function(r) {
 				var el = $(this),
 					IDtemp = el.attr('id').split("_")[0],
@@ -149,23 +149,23 @@
 			})
 		}
 
-		function addRow(vals) {
-			var no = getRowNumber();
-			$(table).append(rowTemplate(no, vals));
+		function scf_addRow(vals) {
+			var no = scf_getRowNumber();
+			$(table).append(scf_rowTemplate(no, vals));
 		}
 
-		function addOption(cl, row, optionNo, vals) {
-			var Ono = (optionNo ? optionNo : getOptionNumber(row));
-			$('#fields_'+row+' .' + cl).append(optionTemplate(row, Ono, vals));
+		function scf_addOption(cl, row, optionNo, vals) {
+			var Ono = (optionNo ? optionNo : scf_getOptionNumber(row));
+			$('#fields_'+row+' .' + cl).append(scf_optionTemplate(row, Ono, vals));
 		}
 
-		function showHideOptions(that, no, vals) {
+		function scf_showHideOptions(that, no, vals) {
         	var thisRow = (no ? no : that.closest('.fields_row').attr('id').split("_")[1]);
 			if(that.val() == 'select') {
 				$('#fields_'+thisRow+' #options').show();
 				if(vals) {
 					for(var o in vals.options) {
-						addOption('option_fields', thisRow, o, vals.options[o]);
+						scf_addOption('option_fields', thisRow, o, vals.options[o]);
 					}
 				}
 			} else {
@@ -176,36 +176,36 @@
 
 
 		$(document.body).on('click', '.add-field', function() {
-			addRow(false);
+			scf_addRow(false);
 			if($(table).find('.no-items').length > 0) $('.no-items').remove();
 		})
 
 		$(document.body).on('click', '.delete-field', function() {
 	        $(this).closest('.fields_row').remove();
-			updateRowNumbers();
+			scf_updateRowNumbers();
 		})
 
 		$(document.body).on('change', '.type-field', function() {
-			showHideOptions( $(this), false, false );
+			scf_showHideOptions( $(this), false, false );
 		})
 
 		$(document.body).on('click', '.add-option', function() {
         	var thisRow = $(this).closest('.fields_row').attr('id').split("_")[1];
-			addOption('option_fields', thisRow, false, false);
+			scf_addOption('option_fields', thisRow, false, false);
 		})
 
 		$(document.body).on('click', '.delete-option', function() {
         	var thisRow = $(this).closest('.fields_row').attr('id').split("_")[1];
 	        $(this).closest('.option-field').remove();
-	        updateOptionNumbers(thisRow);
+	        scf_updateOptionNumbers(thisRow);
 		})
 
 		$(window).load(function() {
 			if(fields_arr) {
 				for (var i in fields_arr) {
 				    if (fields_arr[i]) {
-						addRow(fields_arr[i]);
-						showHideOptions( $('#fields_' + i + ' .type-field'), i, fields_arr[i] );
+						scf_addRow(fields_arr[i]);
+						scf_showHideOptions( $('#fields_' + i + ' .type-field'), i, fields_arr[i] );
 				    }
 				}
 			}

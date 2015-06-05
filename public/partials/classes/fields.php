@@ -1,6 +1,6 @@
 <?php
 
-class Fields {
+class scf_Fields {
 
 
 
@@ -18,7 +18,7 @@ class Fields {
 	/* 
 	 * Constructor functions
 	 */
-	public static function getFields($data = array(), $options = array(), $ignorevalues = false) {
+	public static function getSCFFields($data = array(), $options = array(), $ignorevalues = false) {
 
 		$i = 0;
 
