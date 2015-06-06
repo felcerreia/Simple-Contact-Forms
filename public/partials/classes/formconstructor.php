@@ -72,7 +72,7 @@ class scf_FormConstructor {
 		$this->replacePlaceholders();
 
 		// Create array of all fields
-		$this->fields = Fields::getSCFFields($optionClass->inputtedfields, $this->options, false);
+		$this->fields = scf_Fields::getSCFFields($optionClass->inputtedfields, $this->options, false);
 
 		// Don't show the form if there aren't any fields set
 		if( count($this->fields) < 2 ) return false;
@@ -81,14 +81,14 @@ class scf_FormConstructor {
 		$contentClass->addValidationScript($this->fields);
 
 		// Check if the form has been completed
-		$this->completed = FormValidation::isFormCompleted($this->fields);
+		$this->completed = scf_FormValidation::isFormCompleted($this->fields);
 
 		// Check if the form values are valid been completed. Pass errors if not.
-		$this->valid = FormValidation::isFormValid($this->fields, $this->completed);
+		$this->valid = scf_FormValidation::isFormValid($this->fields, $this->completed);
 		if(is_array($this->valid) && $this->completed) $this->addError($this->valid);
 
 		// Check if the form verification has passed successfully. Pass errors if not.
-		$this->verified = FormValidation::isFormVerified($this->options, $this->fields, $this->completed);
+		$this->verified = scf_FormValidation::isFormVerified($this->options, $this->fields, $this->completed);
 		if($this->verified !== true && $this->completed) $this->addError($this->verified);
 
 		// Form is completed. Now check if it's valid and verified
@@ -102,7 +102,7 @@ class scf_FormConstructor {
 
 			// Reset the values from the fields
 			$this->fields = array();
-			$this->fields = Fields::getSCFFields($optionClass->inputtedfields, $this->options, true);
+			$this->fields = scf_Fields::getSCFFields($optionClass->inputtedfields, $this->options, true);
 
 		}
 
