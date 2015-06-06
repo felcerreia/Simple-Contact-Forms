@@ -285,7 +285,7 @@ class scf_Content {
 	    }
 
 
-    	$content = '<a class="btn btn-primary" '. $actions .'>';
+    	$content = '<a class="btn btn-primary btn-block" '. $actions .'>';
 
 		    // Set the button contents
 		    $content .= $options['btn_text'];
