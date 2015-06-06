@@ -413,6 +413,7 @@ class scf_Content {
 		$this->pageContent .= $content;
 
 	}
+	
 
 
 } 
