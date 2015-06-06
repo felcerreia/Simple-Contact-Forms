@@ -93,7 +93,7 @@ class simple_contact_forms_Public {
 		);
 
 		// Create the class
-		$contentClass = new Content();
+		$contentClass = new scf_Content();
 
 		// Enqueue the styles and scripts
 		$contentClass->setVendors($options);
