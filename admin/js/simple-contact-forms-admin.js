@@ -201,7 +201,7 @@
 		})
 
 		$(window).load(function() {
-			if(fields_arr) {
+			if (typeof fields_arr !== 'undefined' && fields_arr) {
 				for (var i in fields_arr) {
 				    if (fields_arr[i]) {
 						scf_addRow(fields_arr[i]);
