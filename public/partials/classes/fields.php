@@ -22,6 +22,9 @@ class scf_Fields {
 
 		$i = 0;
 
+		// Make it an empty array if no array is passed.
+		if(!is_array($data)) $data = array();
+
 		// Cycle through the fields
 	    foreach($data as $item) {
 

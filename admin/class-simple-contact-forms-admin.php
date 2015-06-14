@@ -106,7 +106,7 @@ class simple_contact_forms_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->simple_contact_forms, plugin_dir_url( __FILE__ ) . 'js/simple-contact-forms-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->simple_contact_forms, plugin_dir_url( __FILE__ ) . 'js/simple-contact-forms-admin.js', array( 'jquery', 'jquery-ui-sortable' ), $this->version, false );
 
 	}
 

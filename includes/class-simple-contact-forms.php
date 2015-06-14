@@ -156,7 +156,7 @@ class simple_contact_forms {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-		//$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'jquery-ui-sortable' );
+		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'jquery_ui_sortable' );
 		$this->loader->add_action( 'wp_ajax_update_field_order', $plugin_admin, 'update_field_order' );
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'simple_contact_forms_menu' );
 		//$this->loader->add_action( 'admin_head', $plugin_admin, 'ShowTinyMCE' );
