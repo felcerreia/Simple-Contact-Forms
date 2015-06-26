@@ -232,6 +232,12 @@ class scf_Content {
 			                		// Set the previous page hidden input
 			                        $content .= '<input type="hidden" name="prevpage" value="'.get_permalink().'">';
 
+			                		// Set the email subject hidden input
+			                        $content .= '<input type="hidden" name="email_subject" value="'.$options['email_subject'].'">';
+
+			                		// Set the form title hidden input
+			                        $content .= '<input type="hidden" name="email_subject" value="'.$options['form_title'].'">';
+
 			                		// Set the submit button
 			                        $content .= '<button type="submit" class="btn btn-primary btn-block">Submit</button>';
 

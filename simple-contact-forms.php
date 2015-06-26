@@ -9,7 +9,7 @@
  * that starts the plugin.
  *
  * @link              http://scf.biglemoncreative.co.uk
- * @since             1.0.1
+ * @since             1.0.0
  * @package           simple_contact_forms
  *
  * @wordpress-plugin

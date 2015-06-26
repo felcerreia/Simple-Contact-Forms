@@ -59,10 +59,10 @@ class scf_Options {
 		if( isset($o['btn_text']) ) $this->defaultOptions['btn_text'] = $o['btn_text'];
 
 		// Change the form title if required
-		if( isset($o['form_title']) ) $this->defaultOptions['form_title'] = $o['form_title'];
+		if( isset($o['form_title']) ) $this->defaultOptions['form_title'] = isset($_POST['form_title']) ? $_POST['form_title'] : $o['form_title'];
 
 		// Change the email subject
-		if( isset($o['email_subject']) ) $this->defaultOptions['email_subject'] = $o['email_subject'];
+		if( isset($o['email_subject']) ) $this->defaultOptions['email_subject'] = isset($_POST['email_subject']) ? $_POST['email_subject'] : $o['email_subject'];
 
 	}
 

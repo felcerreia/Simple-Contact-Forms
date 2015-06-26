@@ -283,7 +283,7 @@ $wp_list_table->prepare_items();
 
 		<?php $wp_list_table->display();?>
 		<input class="button-secondary add-field" type="button" value="<?php _e('Add a new Field'); ?>" style="float:right;" />
-		<p>PLEASE NOTE: It's strongly advices that you select at least one field as a Name or Email Address field type so you know who the enquiry is coming from!</p>
+		<p>PLEASE NOTE: It's strongly adviced that you select at least one field as a Name or Email Address field type so you know who the enquiry is coming from!</p>
 
 	<br />
 	<br />
