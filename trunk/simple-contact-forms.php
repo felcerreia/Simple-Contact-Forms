@@ -8,13 +8,13 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              http://scf.biglemoncreative.co.uk
+ * @link              https://wordpress.org/plugins/simple-contact-forms/
  * @since             1.0.0
  * @package           simple_contact_forms
  *
  * @wordpress-plugin
  * Plugin Name:       Simple Contact Forms
- * Plugin URI:        https://github.com/owenr88/simple-contact-forms
+ * Plugin URI:        https://wordpress.org/plugins/simple-contact-forms/
  * Description:       Designed to strip all the faff so you can insert contact forms where you want and how you want.
  * Version:           1.0.0
  * Author:            Big Lemon Creative
