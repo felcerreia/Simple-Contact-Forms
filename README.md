@@ -1,4 +1,7 @@
-=== Simple Contact Forms ===
+# Simple Contact Forms
+
+*This is a first version, so the readme is probably not what it should be. Contact me on twitter @owenthetwit with any questions.*
+
 Contributors: owenr88
 Tags: contact forms, enquiry forms, contact, forms
 Requires at least: 3.8
@@ -9,11 +12,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 This plugin is designed to strip all the faff so you can insert contact forms where you want and how you want. 
 
-== Description ==
+## Description 
 
 This plugin is designed to strip all the faff so you can insert contact forms where you want and how you want. It's incredibly simple to set up and use so you can spend more time working on the harder parts of the site.
 
-== Installation ==
+## Installation
 
 Install the plugin by following these steps:
 
@@ -23,32 +26,32 @@ Install the plugin by following these steps:
 
 The plugin can also be searched for and installed directly in the WordPress Plugin manager.
 
-== Frequently Asked Questions ==
+## Frequently Asked Questions
 
-= Can I ask you a question? =
+### Can I ask you a question?
 
 Yes. Head over to the [GitHub](https://github.com/owenr88/Simple-Contact-Forms) page with any questions or feature requests. You might also find your answer in the support tab. Feel free to [contact us](http://www.biglemoncreative.co.uk) if you can't find an answer.
 
-== Screenshots ==
+## Screenshots
 
 1. Form generation options
 2. Form completion options
 3. Field settings
 4. Form output
 
-== Changelog ==
+## Changelog
 
-= 1.0.2 =
+### 1.0.2
 * Bug fix with form title
 * Fixed form issues for iPad
 
-= 1.0.1 =
+### 1.0.1
 * Add checkbox support
 * Added the ability to not send an email for test purposes. Use the text "ABANDON" in a name field.
 
-= 1.0.0 =
+### 1.0.0
 * The very first version! Includes widget, functional and shortcode support.
 
-== Upgrade Notice ==
+## Upgrade Notice
 
 Only the first version!
