@@ -83,7 +83,7 @@
 							<p class="description">Your site and secret reCAPTCHA keys are required to use this. <a href="https://www.google.com/recaptcha/intro/index.html" target="_blank">Get them here.</a> The form will default to a mathamatical test if there are no keys provided</p>
 							<label for="include_recaptcha">
 								<input type="hidden"   name="include_recaptcha" value="0" />
-								<input type="checkbox" name="include_recaptcha" value="1" id="include_recaptcha" <?=($vals['include_recaptcha']=='1'?'checked':'')?>> Include reCAPTCHA
+								<input type="checkbox" name="include_recaptcha" value="1" id="include_recaptcha" <?=($vals['include_recaptcha']=='1'?'checked':'')?>> Include the reCAPTCHA php and js files
 							</label>
 						</div>
 					</fieldset>

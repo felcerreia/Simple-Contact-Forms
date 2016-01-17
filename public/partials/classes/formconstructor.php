@@ -39,7 +39,8 @@ class scf_FormConstructor {
 		require_once 'fields.php';
 		require_once 'formvalidation.php';
 		require_once 'options.php';
-		//include( plugin_dir_path( __FILE__ ) . '../../../admin/partials/scf_data.php' );
+
+		global $multiple_forms;
 
 		// Make the passed options an array if it's empty. It sometimes comes through as an empty string.
 		if(!$passedOptions) $passedOptions = array();
@@ -66,7 +67,7 @@ class scf_FormConstructor {
 		$this->options = $optionClass->get($passedOptions);
 
 		// Require the 
-		if( $this->options['validation'] === 'recaptcha' && $this->options['include_recaptcha'] ) require_once 'recaptchalib.php';
+		if( $this->options['validation'] === 'recaptcha' && $this->options['include_recaptcha'] && !isset($multiple_forms)) require_once 'recaptchalib.php';
 
 		// Return false if there is no form to show. This is if no settings have been completed.
 		if( !$this->options['form'] ) return false;
@@ -124,6 +125,9 @@ class scf_FormConstructor {
 
 		// Add the recaptcha script to the form content (if required)
 		if($this->options['validation'] === 'recaptcha') $contentClass->checkRecaptchaScript();
+
+		// Set that there are multiple forms
+		$multiple_forms = true;
 
 		// Echo or return the final page content
 		if( !$this->options['return'] ) echo $contentClass->pageContent;

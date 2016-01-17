@@ -331,10 +331,10 @@ class scf_Content {
 	 */
 	public function addValidationScript($items) {
 
-		global $scf_inserted_validation_javascript;
+		global $multiple_forms;
 
 		// Return if it's already been defined
-		if( isset($scf_inserted_validation_javascript) && $scf_inserted_validation_javascript === true ) return false;
+		if( isset($multiple_forms) && $multiple_forms === true ) return false;
 
 	    $script = '<script>
 	        function validateForm(form_id) {
@@ -375,8 +375,6 @@ class scf_Content {
 	    </script>
 	    ';
 
-		$scf_inserted_validation_javascript = true;
-
 	    $this->addToPageContent($script);
 	}
 
@@ -414,10 +412,10 @@ class scf_Content {
 	 */
 	public function checkRecaptchaScript() {
 
-		global $scf_inserted_recaptcha_javascript;
+		global $multiple_forms;
 
 		// Return if it's already been defined
-		if( isset($scf_inserted_recaptcha_javascript) && $scf_inserted_recaptcha_javascript === true ) return false;
+		if( isset($multiple_forms) && $multiple_forms === true ) return false;
 
 		// Add the script to the content
 		$script = <<<EOD
@@ -436,8 +434,6 @@ class scf_Content {
 EOD;
 
 		$this->addToPageContent($script);
-
-		$scf_inserted_recaptcha_javascript = true;
 
 	}
 	

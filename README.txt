@@ -3,7 +3,7 @@ Contributors: owenr88
 Tags: contact forms, enquiry forms, contact, forms
 Requires at least: 3.8
 Tested up to: 4.4.1
-Stable tag: 1.3.0
+Stable tag: 1.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,6 +37,13 @@ Yes. Head over to the [GitHub](https://github.com/owenr88/Simple-Contact-Forms) 
 4. Form output
 
 == Changelog ==
+
+= 1.3.2 =
+* Readme files (...sigh)
+
+= 1.3.1 =
+* Changed label wording on the reCaptcha question
+* Added a global variable to declare if there are multiple forms
 
 = 1.3.0 =
 * Added reCAPTCHA option for forms
