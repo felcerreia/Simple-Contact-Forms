@@ -13,6 +13,10 @@
  */
 ?>
 
+<<<<<<< HEAD
+=======
+<!-- This file should primarily consist of HTML with a little bit of PHP. -->
+>>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 <?php 
 
 	// Add the file with the main class

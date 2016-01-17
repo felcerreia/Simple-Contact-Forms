@@ -55,7 +55,11 @@ class scf_Fields {
 
 	    	$allitemarray[] = array(
 	            'slug'          => 'maths',
+<<<<<<< HEAD
 	            'title'			=> '3 + 1 = ? (human check)',
+=======
+	            'title'			=> '4 + 2 = ? (human check)',
+>>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 	            'error_title'   => 'Maths',
 	            'required'      => true,
 	            'exclude'       => false,
