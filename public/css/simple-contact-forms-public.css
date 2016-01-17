@@ -1,6 +1,7 @@
 /**
  * All of the CSS for your public-facing functionality should be
  * included in this file.
+<<<<<<< HEAD
  */
 
 .error-notice {
@@ -9,3 +10,6 @@
 .error-notice.show {
 	display: block;
 }
+=======
+ */
+>>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05

@@ -2,8 +2,13 @@
 Contributors: owenr88
 Tags: contact forms, enquiry forms, contact, forms
 Requires at least: 3.8
+<<<<<<< HEAD
 Tested up to: 4.4.1
 Stable tag: 1.3.0
+=======
+Tested up to: 4.2.2
+Stable tag: 1.0.2
+>>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +43,7 @@ Yes. Head over to the [GitHub](https://github.com/owenr88/Simple-Contact-Forms) 
 
 == Changelog ==
 
+<<<<<<< HEAD
 = 1.3.0 =
 * Added reCAPTCHA option for forms
 * Added splitter script to load multiple recaptcha
@@ -93,6 +99,8 @@ Yes. Head over to the [GitHub](https://github.com/owenr88/Simple-Contact-Forms) 
 * Set default fields when installing
 * Fixing a few small bugs
 
+=======
+>>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 = 1.0.2 =
 * Bug fix with form title
 * Fixed form issues for iPad

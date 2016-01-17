@@ -16,7 +16,11 @@
  * Plugin Name:       Simple Contact Forms
  * Plugin URI:        https://wordpress.org/plugins/simple-contact-forms/
  * Description:       Designed to strip all the faff so you can insert contact forms where you want and how you want.
+<<<<<<< HEAD
  * Version:           1.3.0
+=======
+ * Version:           1.0.2
+>>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
  * Author:            Big Lemon Creative
  * Author URI:        http://www.biglemoncreative.co.uk
  * License:           GPL-2.0+
@@ -24,7 +28,11 @@
  * Text Domain:       simple-contact-forms
  * Domain Path:       /languages
  * Requires at least: 3.8
+<<<<<<< HEAD
  * Tested up to: 	  4.4.1
+=======
+ * Tested up to: 	  4.2
+>>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
  */
 
 // If this file is called directly, abort.

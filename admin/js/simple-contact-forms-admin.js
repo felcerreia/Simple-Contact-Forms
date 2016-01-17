@@ -103,9 +103,15 @@
 				required: true,
 			};
 			return '<tr id="fields_' + rN + '" class="alternate fields_row">' +
+<<<<<<< HEAD
 				'<td class="column-col_fields_id form-field handle">' + rN + '</td>' +
 				'<td class="column-col_fields_label form-field"><input type="text" value="' + vals['label'] + '" class="all-options" name="fields['+rN+'][label]" /></td>' +
 				'<td class="column-col_fields_type form-field"><select class="type-field" name="fields['+rN+'][type]" value="' + vals['type'] + '" id="">' +
+=======
+				'<td class="column-col_link_id form-field handle">' + rN + '</td>' +
+				'<td class="column-col_link_label form-field"><input type="text" value="' + vals['label'] + '" class="all-options" name="fields['+rN+'][label]" /></td>' +
+				'<td class="column-col_link_type form-field"><select class="type-field" name="fields['+rN+'][type]" value="' + vals['type'] + '" id="">' +
+>>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 					'<option value="checkbox"' + (vals['type'] == 'checkbox' ? ' selected' : '') + '>Checkbox' +
 					'<option value="select"' + (vals['type'] == 'select' ? ' selected' : '') + '>Dropdown' +
 					'<option value="email"' + (vals['type'] == 'email' ? ' selected' : '') + '>Email Address' +
@@ -113,6 +119,7 @@
 					'<option value="name"' + (vals['type'] == 'name' ? ' selected' : '') + '>Name Field' +
 					'<option value="text"' + (vals['type'] == 'text' ? ' selected' : '') + '>Text Field' +
 				'</select></td>' +
+<<<<<<< HEAD
 				'<td class="column-col_fields_options"><div id="options" style="display:none;">' +
 					'<div class="option_fields"></div><input type="button" class="button-secondary add-option" value="+" />' + 
 					'<p class="description">Note: The top option will be the default option</p>' +
@@ -120,6 +127,15 @@
 				'<td class="column-col_fields_required"><input type="checkbox" ' + (vals['required'] == '1' ? 'checked' : '') + ' value="checked" name="fields['+rN+'][required]" /></td>' +
 				'<td class="column-col_fields_exclude"><input type="checkbox" ' + (vals['exclude'] == '1' ? 'checked' : '') + ' value="exclude" name="fields['+rN+'][exclude]" /></td>' +
 				'<td class="column-col_fields_delete form-field"><a class="delete-field">Delete</a></td>' +
+=======
+				'<td class="column-col_link_options"><div id="options" style="display:none;">' +
+					'<div class="option_fields"></div><input type="button" class="button-secondary add-option" value="+" />' + 
+					'<p class="description">Note: The top option will be the default option</p>' +
+				'</div></td>' +
+				'<td class="column-col_link_required"><input type="checkbox" ' + (vals['required'] ? 'checked' : '') + ' value="checked" name="fields['+rN+'][required]" /></td>' +
+				'<td class="column-col_link_exclude"><input type="checkbox" ' + (vals['exclude'] ? 'checked' : '') + ' value="exclude" name="fields['+rN+'][exclude]" /></td>' +
+				'<td class="column-col_link_delete form-field"><a class="delete-field">Delete</a></td>' +
+>>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 			'</tr>';
 		}
 

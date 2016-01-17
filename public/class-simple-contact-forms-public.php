@@ -88,9 +88,14 @@ class simple_contact_forms_Public {
 
 		// Create the vendor options
 		$options = array(
+<<<<<<< HEAD
 			'include_bootstrap' => (boolean) get_option('scf_include_bootstrap', false),
 			'include_fontawesome' => (boolean) get_option('scf_include_bootstrap', false),
 			'include_recaptcha' => (boolean) get_option('scf_validation_enable', false) && (boolean) get_option('scf_include_recaptcha', false) && get_option('scf_validation', false) === 'recaptcha',
+=======
+			'include_bootstrap' => get_option('scf_include_bootstrap', false),
+			'include_fontawesome' => get_option('scf_include_bootstrap', false),
+>>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 		);
 
 		// Create the class
@@ -104,6 +109,7 @@ class simple_contact_forms_Public {
 
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Add async and defer to js scripts
 	 *
@@ -128,4 +134,6 @@ class simple_contact_forms_Public {
 	}
 
 
+=======
+>>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 }
