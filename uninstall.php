@@ -31,7 +31,6 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 }
 
 
-<<<<<<< HEAD
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'simple-contact-forms/admin/partials/scf_options.php';
 
 $options = new SCFOptions();
@@ -43,10 +42,3 @@ require_once plugin_dir_path( dirname( __FILE__ ) ) . 'simple-contact-forms/admi
 $scf_db = new SCF_Data_Management();
 
 $scf_db->deleteTable();
-=======
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'simple-contact-forms/admin/partials/SCFOptions.php';
-
-$options = new SCFOptions();
-
-$options->delete();
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05

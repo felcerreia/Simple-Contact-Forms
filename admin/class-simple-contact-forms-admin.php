@@ -62,7 +62,6 @@ class simple_contact_forms_Admin {
 		$this->version = $version;
 		$this->notice = '';
 
-<<<<<<< HEAD
 		//Our class extends the WP_List_Table class, so we need to make sure that it's there
 		if(!class_exists('WP_List_Table')){
 		   require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
@@ -73,8 +72,6 @@ class simple_contact_forms_Admin {
 		include( plugin_dir_path( __FILE__ ) . "partials/scf_fields_table.php" );
 		include( plugin_dir_path( __FILE__ ) . "partials/scf_options.php" );
 
-=======
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 	}
 
 	/**
@@ -123,14 +120,11 @@ class simple_contact_forms_Admin {
 
 	}
 
-<<<<<<< HEAD
 	/**
 	 * Create a notice to add some fields
 	 *
 	 * @since    1.0.0
 	 */
-=======
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 	public function create_notice() {
 		
 		// Set the global $post variable
@@ -160,7 +154,6 @@ class simple_contact_forms_Admin {
 
 	}
 
-<<<<<<< HEAD
 	/**
 	 * Load the menu
 	 *
@@ -171,31 +164,17 @@ class simple_contact_forms_Admin {
 		// Create the options page
 		add_options_page( 'Simple Contact Forms', 'Simple Contact Forms', 'manage_options', 'simple-contact-forms', 'simple_contact_forms_options' );
 	
-=======
-
-	public function simple_contact_forms_menu() {
-		//Our class extends the WP_List_Table class, so we need to make sure that it's there
-		if(!class_exists('WP_List_Table')){
-		   require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
-		}
-		add_options_page( 'Simple Contact Forms', 'Simple Contact Forms', 'manage_options', 'simple-contact-forms', 'simple_contact_forms_options' );
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 	}
 
 
 
 	public function registerwidget() {
 
-<<<<<<< HEAD
 		include ('partials/scf_widget.php');
-=======
-		include ('partials/wpb_widget.php');
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 
 	}
 
 	public function jquery_ui_sortable() {
-<<<<<<< HEAD
 
 		return true;
 
@@ -206,14 +185,10 @@ class simple_contact_forms_Admin {
 		$scf_db = new SCF_Data_Management();
 		$scf_db->db_check();
 
-=======
-		return true;
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 	}
 
 }
 
-<<<<<<< HEAD
 /**
  * Create the tabs
  *
@@ -231,15 +206,9 @@ function scf_admin_tabs( $current = 'settings' ) {
 }
 
 
-=======
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 function simple_contact_forms_options() {
 	if ( !current_user_can( 'manage_options' ) )  {
 		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
 	}
-<<<<<<< HEAD
 	include ('views/simple-contact-forms-admin-display.php');
-=======
-	include ('partials/simple-contact-forms-admin-display.php');
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 }

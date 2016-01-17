@@ -25,21 +25,12 @@ class scf_FormValidation {
 	public static function isFormCompleted($fields) {
 
 		// Has the required email or name field been completed?
-<<<<<<< HEAD
 		$completed = true;
 
 		// Prove me wrong
         foreach($fields as $field) {
 			if( $field['required'] && empty($field['value']) && $completed) {
 		        $completed = false;
-=======
-		$completed = false;
-
-		// Prove me wrong
-        foreach($fields as $field) {
-			if( $field['slug'] == 'email' || $field['slug'] == 'fullname' && !$completed) {
-		        $completed = !empty($field['value']);
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 		    };
 		};
 
@@ -71,7 +62,6 @@ class scf_FormValidation {
 
 			} else {
 
-<<<<<<< HEAD
 	        	switch ($field['type']) {
 	        		case 'email':
 						if (!filter_var($field['value'], FILTER_VALIDATE_EMAIL)) $errors[] = 'Invalid format in the ' . $field['title'] . ' field.';
@@ -79,19 +69,6 @@ class scf_FormValidation {
 	        		
 	        		case 'name':
 						if (!preg_match("/^[a-zA-Z ]*$/",$field['value'])) $errors[] = 'Only letters and white space allowed in the ' . $field['title'] . ' field.';
-=======
-	        	switch ($field['slug']) {
-	        		case 'email':
-						if (!filter_var($field['value'], FILTER_VALIDATE_EMAIL)) $errors[] = 'Invalid email format.';
-	        			break;
-	        		
-	        		case 'fullname':
-						if (!preg_match("/^[a-zA-Z ]*$/",$field['value'])) $errors[] = 'Only letters and white space allowed in the name.';
-	        			break;
-	        		
-	        		default:
-	        			# code...
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 	        			break;
 	        	}
 
@@ -119,7 +96,6 @@ class scf_FormValidation {
 		$verified = false;
 
 		// Has the verification been completed properly?
-<<<<<<< HEAD
 		if( $options['validation'] === 'recaptcha' ) {
 
 			$answer = isset($_POST["g-recaptcha-response"]) ? $_POST["g-recaptcha-response"] : false;
@@ -142,30 +118,13 @@ class scf_FormValidation {
 		    curl_close($ch);
 
 			if ( !$response->success ) return "The reCAPTCHA wasn't entered correctly. Please try it again";
-=======
-		if( $options['validation'] == 'recaptcha' ) {
-
-			// Form is using reCAPTCHA. Do your thang!
-            $resp = recaptcha_check_answer (
-            	$options['private_key'],
-                $_SERVER["REMOTE_ADDR"],
-                $_POST["recaptcha_challenge_field"],
-                $_POST["recaptcha_response_field"]
-            );
-            if( !$resp->is_valid ) return "The reCAPTCHA wasn't entered correctly. Please try it again";
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 
 		} else {
 
 			// Form is probably using maths. 
 			foreach($fields as $field) {
 
-<<<<<<< HEAD
 				if( $field['slug'] == 'maths' && $field['value'] != 4 ) return "The maths test was incorrect. Please try it again";
-=======
-
-				if( $field['slug'] == 'maths' && $field['value'] != 6 ) return "The maths test was incorrect. Please try it again";
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 
 			}
 

@@ -39,10 +39,7 @@ class scf_FormConstructor {
 		require_once 'fields.php';
 		require_once 'formvalidation.php';
 		require_once 'options.php';
-<<<<<<< HEAD
 		//include( plugin_dir_path( __FILE__ ) . '../../../admin/partials/scf_data.php' );
-=======
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 
 		// Make the passed options an array if it's empty. It sometimes comes through as an empty string.
 		if(!$passedOptions) $passedOptions = array();
@@ -60,10 +57,6 @@ class scf_FormConstructor {
 		 * 9. Send email if form is valid
 		 */
 
-<<<<<<< HEAD
-=======
-
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 		// Set the classes required
 		$contentClass = new scf_Content();
 		$emailClass = new scf_Email();
@@ -72,12 +65,9 @@ class scf_FormConstructor {
 		// Set the options and settings
 		$this->options = $optionClass->get($passedOptions);
 
-<<<<<<< HEAD
 		// Require the 
 		if( $this->options['validation'] === 'recaptcha' && $this->options['include_recaptcha'] ) require_once 'recaptchalib.php';
 
-=======
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 		// Return false if there is no form to show. This is if no settings have been completed.
 		if( !$this->options['form'] ) return false;
 
@@ -88,14 +78,7 @@ class scf_FormConstructor {
 		$this->fields = scf_Fields::getSCFFields($optionClass->inputtedfields, $this->options, false);
 
 		// Don't show the form if there aren't any fields set
-<<<<<<< HEAD
 		if( count($this->fields) < ($this->options['validation'] !== 'recaptcha' ? 2 : 1 ) ) return false;
-=======
-		if( count($this->fields) < 2 ) return false;
-
-		// Add the js script to the form content
-		$contentClass->addValidationScript($this->fields);
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 
 		// Check if the form has been completed
 		$this->completed = scf_FormValidation::isFormCompleted($this->fields);
@@ -111,12 +94,6 @@ class scf_FormConstructor {
 		// Form is completed. Now check if it's valid and verified
 		if( $this->completed === true && $this->valid === true && $this->verified === true ) {
 
-<<<<<<< HEAD
-=======
-			// Create the success message
-			$contentClass->addSuccessMessage($this->options);
-
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 			// Send the email
 			$emailClass->sendEmail($this->fields, $this->options);
 
@@ -124,7 +101,6 @@ class scf_FormConstructor {
 			$this->fields = array();
 			$this->fields = scf_Fields::getSCFFields($optionClass->inputtedfields, $this->options, true);
 
-<<<<<<< HEAD
 			// Set the redirect
 			if( $this->options['send_to_url'] === '' ) $this->options['send_to_url'] = get_permalink();
 
@@ -149,14 +125,6 @@ class scf_FormConstructor {
 		// Add the recaptcha script to the form content (if required)
 		if($this->options['validation'] === 'recaptcha') $contentClass->checkRecaptchaScript();
 
-=======
-		}
-
-		// Add the form or button as required and output the content with errors (if there are any).
-		if( $this->options['btn'] == true ) $contentClass->addButton($this->options);
-        if( $this->options['form'] == true ) $contentClass->addForm($this->options, $this->fields, $this->errors, $this->verified, $this->completed);
-
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 		// Echo or return the final page content
 		if( !$this->options['return'] ) echo $contentClass->pageContent;
 		return $contentClass->pageContent;

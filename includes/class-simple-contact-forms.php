@@ -69,11 +69,7 @@ class simple_contact_forms {
 	public function __construct() {
 
 		$this->simple_contact_forms = 'simple-contact-forms';
-<<<<<<< HEAD
 		$this->version = '1.0.7';
-=======
-		$this->version = '1.0.0';
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -167,10 +163,7 @@ class simple_contact_forms {
 
 		$this->loader->add_action( 'admin_notices', $plugin_admin, 'create_notice' );
 		$this->loader->add_action( 'widgets_init', $plugin_admin, 'registerwidget' );
-<<<<<<< HEAD
 		$this->loader->add_action( 'plugins_loaded', $plugin_admin, 'scf_update_db_check' );
-=======
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 
 	}
 
@@ -189,11 +182,8 @@ class simple_contact_forms {
 		$this->loader->add_action( 'wp_enqueue_scripts',  $plugin_public, 'enqueue_scripts' );
 		$this->loader->add_action( 'wp_enqueue_scripts',  $plugin_public, 'public_vendors' );
 
-<<<<<<< HEAD
 		$this->loader->add_filter( 'script_loader_tag',  $plugin_public, 'add_async_forscript', 10, 2 );
 
-=======
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 	}
 
 	/**
@@ -255,9 +245,5 @@ class simple_contact_forms {
  */
 function simple_contact_form($sc_options = array())
 {
-<<<<<<< HEAD
 	include plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/simple-contact-forms-public-display.php';
-=======
-	require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/simple-contact-forms-public-display.php';
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 }

@@ -65,7 +65,6 @@ class scf_Email {
         // Determine the from details. Check for name field, then email field, then default to 'Enquirer'
         foreach($fields as $field) {
 
-<<<<<<< HEAD
         	if( $field['type'] == 'name' && isset($field['value']) && !isset($sender_name)) $sender_name = $field['value'];
 
             if( $field['type'] == 'email' && isset($field['value']) && !isset($sender_email) ) $sender_email = $field['value'];
@@ -73,15 +72,6 @@ class scf_Email {
 
         // Set the from details
         $headers .= "From: " . (!isset($sender_name) ? $sender_name : 'Enquirer') . (!isset($sender_email) ? ' <' . $sender_email . '>' : '') . "\r\n";
-=======
-        	if( $field['type'] == 'name' && isset($field['value']) ) $sender_name = $field['value'];
-
-            if( $field['type'] == 'email' && isset($field['value']) ) $sender_email = $field['value'];
-        }
-
-        // Set the from details
-        $headers .= 'From: ' . (!empty($sender_name) ? $sender_name : 'Enquirer') . ' <' . (!empty($sender_email) ? $sender_email : '') . '>' . "\r\n";
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 
         // Set the name checker
         $nameIsAbandon = false;
@@ -90,11 +80,7 @@ class scf_Email {
         foreach($fields as $field) {
 
             // Set the field content
-<<<<<<< HEAD
         	if( $field['slug']!=='maths' && !$field['exclude'] ) $this->addToEmailContents($field);
-=======
-        	if( $field['slug']!=='maths' && $field['exclude'] !== true ) $this->addToEmailContents($field);
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 
             // Skip this if the name field contains the words "ABANDON" only
             if( $field['type']=='name' && $field['value'] == "ABANDON" ) $nameIsAbandon = true;
@@ -108,17 +94,12 @@ class scf_Email {
             var_dump(
                 $senders,
                 $subject, 
-<<<<<<< HEAD
                 $this->emailcontent,
                 $headers
-=======
-                $this->emailcontent
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
             );
 
         } else {
 
-<<<<<<< HEAD
             foreach($senders as $sendingemail) {
                 $final_senders[] = $sendingemail['email']; 
             };
@@ -141,20 +122,6 @@ class scf_Email {
         // Insert the data
         $scf_db->insertRow($this->emailcontent, 0);
 
-=======
-            // Send the email for each sender
-            foreach($senders as $sendingemail) {
-                mail(
-                	$sendingemail['email'], 
-                	$subject, 
-                	$this->emailcontent, 
-                	$headers
-            	);
-            };
-
-        }
-
->>>>>>> a5d31d015991a8e83f64b994d6bc76a885c0eb05
 	}
 
 
