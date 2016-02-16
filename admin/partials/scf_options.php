@@ -71,7 +71,13 @@ class SCFOptions {
 		};
 
 		// Get the option from the database
-		return get_option( 'scf_' . $slug , $default );
+		$option = get_option( 'scf_' . $slug , $default );
+
+		// Check if it's the table and it's not a string
+		if( $slug === 'table_fields' && !is_array($option) ) $option = maybe_unserialize($option);
+
+		// Return
+		return $option;
 
 	}
 
