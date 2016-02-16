@@ -1,17 +1,41 @@
 === Simple Contact Forms ===
-Contributors: owenr88
+Contributors: biglemoncreative
 Tags: contact forms, enquiry forms, contact, forms
 Requires at least: 3.8
-Tested up to: 4.4.1
-Stable tag: 1.3.2
+Tested up to: 4.4.2
+Stable tag: 1.3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin is designed to strip all the faff so you can insert contact forms where you want and how you want. 
+This plugin is designed to strip all the hassle so you can insert contact forms where you want and how you want. 
 
 == Description ==
 
-This plugin is designed to strip all the faff so you can insert contact forms where you want and how you want. It's incredibly simple to set up and use so you can spend more time working on the harder parts of the site.
+Simple Contact Forms is designed to strip all the hassle so you can insert contact forms where you want and how you want. It's incredibly simple to set up and use so you can spend more time working on the harder parts of your site.
+
+Dropping Simple Contact Forms into your site allows users to complete your forms and interact with your site. A successful completion will trigger an email notification to you and create a record in the database, which is viewable in the WordPress Admin area.
+
+Build your own contact forms with a number of configurable drag and drop fields. Fields can also be required for successful submission or excluded completely to be saved for later. The fields include:
+
+* Plain text - Normal, Name and Email Address specific
+* Textarea
+* Checkboxe - Single or Multiple
+* Dropdowns - Multiple Options
+
+The plugin also has a number of options configurable in the WordPress admin area. These include:
+
+* Form Titles
+* Form Styling (Bootstrap only for now)
+* Form Validation (reCAPTCHA and Maths test)
+* Form Collapsable by a button
+* Button Text & Icon
+* Button Styling
+* Destination Pages
+* Email Address for Notification
+* Email Subject for Notification
+* Success Message Content
+
+Simple Contact Forms was created and is managed by [Big Lemon Creative](http://www.biglemoncreative.co.uk).
 
 == Installation ==
 
@@ -27,7 +51,7 @@ The plugin can also be searched for and installed directly in the WordPress Plug
 
 = Can I ask you a question? =
 
-Yes. Head over to the [GitHub](https://github.com/owenr88/Simple-Contact-Forms) page with any questions or feature requests. You might also find your answer in the support tab. Feel free to [contact us](http://www.biglemoncreative.co.uk) if you can't find an answer.
+Yes. Head over to the [GitHub](https://github.com/owenr88/Simple-Contact-Forms) page with any questions or feature requests. You might also find your answer in the support tab. Feel free to [contact us](http://www.biglemoncreative.co.uk) if you can't find an answer or reach us on [Twitter](https://twitter.com/biglemontweets).
 
 == Screenshots ==
 
@@ -37,6 +61,13 @@ Yes. Head over to the [GitHub](https://github.com/owenr88/Simple-Contact-Forms) 
 4. Form output
 
 == Changelog ==
+
+= 1.3.3 =
+* Moved function called to fix form not returning
+* Removed duplicate form title options in the sidebar and added some bits
+* New descriptions
+* Added logo and banner images 
+* Changed contributors to Big Lemon Creative
 
 = 1.3.2 =
 * Readme files (...sigh)

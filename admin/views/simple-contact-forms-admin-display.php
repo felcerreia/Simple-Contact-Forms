@@ -63,7 +63,6 @@ $vals = $options->get();
 				<li><strong>form_title: </strong><em>String</em></li>
 				<li><strong>form_collapse: </strong><em>Boolean</em></li>
 				<li><strong>email_subject: </strong><em>String</em></li>
-				<li><strong>form_title: </strong><em>String</em></li>
 				<li><strong>return: </strong><em>Boolean</em> (echoes if false)</li>
 			</ul>
 
@@ -80,6 +79,10 @@ $vals = $options->get();
 			<hr>
 
 			<p class="df-link inner">Created by <a href="http://www.biglemoncreative.co.uk" target="_blank" title="Big Lemon Creative">Big Lemon Creative</a></p>
+
+			<p class="df-link inner">Sign up for your <a href="http://www.biglemoncreative.co.uk/signup" target="_blank" title="Big Lemon Creative">First Class Ticket To Awesome</a> emails</p>
+
+			<p class="df-link inner"><a href="https://twitter.com/biglemontweets" target="_blank" title="Big Lemon Creative">Tweet Us @BigLemonTweets</a></p>
 
 		</div>
 	</div>

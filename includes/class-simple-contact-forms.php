@@ -233,7 +233,7 @@ class simple_contact_forms {
 	 */
     public function shortcode($sc_options = array())
     {
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/simple-contact-forms-public-display.php';
+		simple_contact_form( $sc_options );
     }
 
 }
@@ -245,5 +245,17 @@ class simple_contact_forms {
  */
 function simple_contact_form($sc_options = array())
 {
-	include plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/simple-contact-forms-public-display.php';
+
+	// Add the file with the main class
+	require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/classes/formconstructor.php';
+
+	// Create the form constructor class
+	$form = new scf_FormConstructor();
+
+	// Start the form constructor class
+	$html = $form->init($sc_options);
+
+	// Return the $html
+	return $html;
+
 }
