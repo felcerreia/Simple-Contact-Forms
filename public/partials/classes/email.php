@@ -3,7 +3,10 @@
 class scf_Email {
 
 
-
+    /**
+     * The final email content to be returned
+     * @var String
+     */
 	private $emailcontent;
 
 

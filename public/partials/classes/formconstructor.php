@@ -130,8 +130,8 @@ class scf_FormConstructor {
 		$multiple_forms = true;
 
 		// Echo or return the final page content
-		if( !$this->options['return'] ) echo $contentClass->pageContent;
-		return $contentClass->pageContent;
+		if( !$this->options['return'] ) echo $contentClass->getPageContent();
+		return $contentClass->getPageContent();
 
 	}
 

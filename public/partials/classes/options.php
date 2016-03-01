@@ -25,6 +25,7 @@ class scf_Options {
 	        'column_class'      => 'col-sm-12',                     // Split form over two columns
 	        'labels'            => true,                            // Use labels
 	        'placeholders'      => false,                           // Use placeholders
+	        'btn_wrapper'		=> 'col-xs-12',						// Wrapper class for the button to sit in
 	    );
 
 		// Dummy field data
@@ -154,6 +155,9 @@ class scf_Options {
 
 		// Change the button text if required
 		if( isset($o['btn_text']) ) $this->replacedOptions['btn_text'] = $o['btn_text'];
+
+		// Change the button wrapper
+		if( isset($o['btn_wrapper_class']) ) $this->replacedOptions['btn_wrapper'] = $o['btn_wrapper_class'];
 
 		// Change the form title if required
 		if( isset($o['form_title']) ) $this->replacedOptions['form_title'] = isset($_POST['form_title']) ? $_POST['form_title'] : $o['form_title'];

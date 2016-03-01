@@ -60,6 +60,7 @@ $vals = $options->get();
 				<li><strong>width: </strong><em>String</em> (full-width|narrow)</li>
 				<li><strong>button: </strong><em>Boolean</em></li>
 				<li><strong>btn_text: </strong><em>String</em></li>
+				<li><strong>btn_wrapper_class: </strong><em>String</em></li>
 				<li><strong>form_title: </strong><em>String</em></li>
 				<li><strong>form_collapse: </strong><em>Boolean</em></li>
 				<li><strong>email_subject: </strong><em>String</em></li>

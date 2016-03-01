@@ -4,14 +4,39 @@ class scf_Content {
 
 
 
+	/**
+	 * The content for the final email
+	 * @var String
+	 */
 	public $emailContent;
-	public $pageContent;
+
+
+
+	/**
+	 * The content for the page
+	 * @var String
+	 */
+	private $pageContent;
+
+
+
+	/**
+	 * Check if the success message is ready to be displayed
+	 * @var Boolean
+	 */
 	private $successMessageReady;
+
+
+
+	/**
+	 * The ID for the form
+	 * @var String
+	 */
 	private $form_id;
 
 
 
-	/* 
+	/**
 	 * Constructor functions
 	 */
 	public function __construct() {
@@ -20,14 +45,15 @@ class scf_Content {
 		$this->successMessageReady = false;
 
 		// Set the form ID
-		$this->form_id = "form_".rand(0,10000);
+		$this->form_id = rand(0,10000);
 
 	}
 
 
 
-	/* 
-	 * Constructor functions
+	/**
+	 * Set the required scripts and styles
+	 * @param Array $options The options used for this plugin
 	 */
 	public function setVendors($options) {
 
@@ -62,8 +88,13 @@ class scf_Content {
 
 
 
-	/* 
-	 * Add the form to the page content
+	/**
+	 * Add the form to the page ocntnet
+	 * @param array   $options       The options set and passed
+	 * @param array   $fields        All the required fields for the form
+	 * @param array   $errors        Any errors that need to be shown
+	 * @param boolean $isresp        Has the form passed the reCAPTCHA test
+	 * @param boolean $formcompleted Is the form completed yet
 	 */
 	public function addForm($options = array(), $fields = array(), $errors = array(), $isresp = false, $formcompleted = false) {
 
@@ -71,7 +102,7 @@ class scf_Content {
 		if( $this->successMessageReady ) return false;
 
 		// Open the wrapping divs - .in SHOWS the content
-	    $content = '<div id="'.$this->form_id.'" class="bs-component ' . ($options['form_collapsed'] && $options['button'] ? 'collapse' : 'collapse in' ) . '">';
+	    $content = '<div id="form_'.$this->form_id.'" class="scf_form bs-component ' . ($options['form_collapsed'] && $options['button'] ? 'collapse' : 'collapse in' ) . '">';
 
 		    // Open the row
 		    $content .= '<div class="row">';
@@ -94,7 +125,7 @@ class scf_Content {
 		        	$content .= '<div class="alert alert-danger error-notice" role="alert">There are some errors on the form. Please correct and re-submit.</div>';
 
 		        	// Open the actual form
-		            $content .= '<form class="form-horizontal row" name="simple_contact_form" method="post" action="" id="form-holder" onsubmit="return validateForm(\''.$this->form_id.'\')" >';
+		            $content .= '<form class="form-horizontal row" name="simple_contact_form" method="post" action="" id="form-holder" onsubmit="return validateForm(\'form_'.$this->form_id.'\')" >';
 
 		            	// Start outputting each field
 		                foreach($fields as $item) {
@@ -217,7 +248,7 @@ class scf_Content {
 		                    		$content .= '<div class="'.$nextclass.' '.$offset.'">';
 
 		                    			// Add the content
-		                    			$content .= '<div id="recaptcha_'.$this->form_id.'" class="recaptcha-box" site-key="'.$options['public_key'].'"></div>';
+		                    			$content .= '<div id="recaptcha_form_'.$this->form_id.'" class="recaptcha-box" site-key="'.$options['public_key'].'"></div>';
 
 	                    			// Close the row
 	                    			$content .= '</div>';
@@ -252,7 +283,7 @@ class scf_Content {
 			                        $content .= '<input type="hidden" name="form_title" value="'.htmlentities($options['form_title']).'">';
 
 			                		// Set the form ID hidden input
-			                        $content .= '<input type="hidden" name="form_id" value="'.$this->form_id.'">';
+			                        $content .= '<input type="hidden" name="form_id" value="form_'.$this->form_id.'">';
 
 			                		// Set the submit button
 			                        $content .= '<button type="submit" class="btn btn-block ' . $options['submit_class'] . '">Submit</button>';
@@ -291,8 +322,9 @@ class scf_Content {
 
 
 
-	/* 
-	 * Add the button to the page content
+	/**
+	 * Add a button to the page contnet
+	 * @param array $options The options set and passed
 	 */
 	public function addButton($options = array()) {
 
@@ -301,22 +333,42 @@ class scf_Content {
 
 	    // Check if it needs a url to link to or if it collapses
 	    if($options['form']) {
-	    	$actions = 'data-toggle="collapse" data-target="#'.$this->form_id.'" href="javascript:void(0);"';
+	    	$actions = 'data-toggle="collapse" data-target="#form_'.$this->form_id.'" href="javascript:void(0);"';
 	    } else {
 	    	$actions = 'href="'.$options['send_to_url'].'"';
 	    }
 
-    	$content = '<a class="btn btn-block ' . $options['btn_class'] . '" '. $actions . '>';
+	    // Open the main form wrapper
+	    $content = '<div id="button_'.$this->form_id.'" class="scf_button">';
 
-		    // Set the button contents
-		    $content .= $options['btn_text'];
+	    	// Open the row
+	    	$content .= '<div class="row">';
 
-		    // Check if the button has a side icon. Set the side and icon if so.
-		    if($options['btn_icon_side'] != "none") {
-		    	$content .= '<i class="fa '.$options['btn_icon_type'].' pull-'.$options['btn_icon_side'].'" style="font-size: 14pt;"></i>';
-		    }
+		    	// Open the wrapper
+		    	$content .= '<div class="'.$options['btn_wrapper'].'">';
 
-	    $content .= '</a>';
+				    // Open the button
+			    	$content .= '<a class="btn btn-block ' . $options['btn_class'] . '" '. $actions . '>';
+
+					    // Set the button contents
+					    $content .= $options['btn_text'];
+
+					    // Check if the button has a side icon. Set the side and icon if so.
+					    if($options['btn_icon_side'] != "none") {
+					    	$content .= '<i class="fa '.$options['btn_icon_type'].' pull-'.$options['btn_icon_side'].'" style="font-size: 14pt;"></i>';
+					    }
+
+				    // Close the button
+				    $content .= '</a>';
+
+			    // Close the inner wrapper
+			    $content .= '</div>';	
+
+		    // Close the row
+		    $content .= '</div>';	
+
+	    // Close the main form wrapper
+	    $content .= '</div>';	
 
 		// Send this content to the page content to be executed
 	    $this->addToPageContent($content);
@@ -326,10 +378,11 @@ class scf_Content {
 
 
 
-	/* 
+	/**
 	 * Create the validation script for required items
+	 * @param array $fields Each of the fields to be checked for required values
 	 */
-	public function addValidationScript($items) {
+	public function addValidationScript($fields) {
 
 		global $multiple_forms;
 
@@ -347,14 +400,14 @@ class scf_Content {
 
             	';
 
-	            foreach($items as $item) {
+	            foreach($fields as $field) {
 
-	                if( !isset($item['required']) || !$item['required'] || !isset($item['slug']) ) continue;
+	                if( !isset($field['required']) || !$field['required'] || !isset($field['slug']) ) continue;
 
                     $script .= '
 
-                    var input_el = $(form + " #'.$item['slug'].'[name=\''.$item['slug'].'\']");
-                    var valid_el = $(form + " .'.$item['slug'].'");
+                    var input_el = $(form + " #'.$field['slug'].'[name=\''.$field['slug'].'\']");
+                    var valid_el = $(form + " .'.$field['slug'].'");
                     var is_checkbox = input_el.is(":checkbox");
 
                     valid_el.removeClass( "has-error" );
@@ -380,8 +433,9 @@ class scf_Content {
 
 
 
-	/* 
+	/**
 	 * Add the success message to the content
+	 * @param array $options The set and passed plugin options
 	 */
 	public function addSuccessMessage($options) {
 
@@ -395,8 +449,9 @@ class scf_Content {
 
 
 
-	/* 
-	 * Add content to the page body
+	/**
+	 * Add passed content to the page body variable
+	 * @param String $content the contnet to be added
 	 */
 	public function addToPageContent($content) {
 
@@ -407,7 +462,7 @@ class scf_Content {
 
 
 
-	/*
+	/**
 	 * Add the script for recaptcha if it hasn't already been defined
 	 */
 	public function checkRecaptchaScript() {
@@ -434,6 +489,20 @@ class scf_Content {
 EOD;
 
 		$this->addToPageContent($script);
+
+	}
+
+
+
+	/**
+	 * Final function to get the page content
+	 * @return String Final content to be returned
+	 */
+	public function getPageContent() {
+
+		$content = '<div class="scf_wrapper">' . $this->pageContent . '</div>';
+
+		return $content;
 
 	}
 	
