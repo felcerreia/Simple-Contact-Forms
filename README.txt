@@ -68,6 +68,7 @@ Yes. Head over to the [GitHub](https://github.com/owenr88/Simple-Contact-Forms) 
 * New function to call the page content
 * New classes to wrap the button, the form and the whole thing
 * Better documentation
+* Added composer compatability
 
 = 1.3.4 =
 * Created fallback for table array turning into a string
