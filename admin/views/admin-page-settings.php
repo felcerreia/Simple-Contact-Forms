@@ -98,6 +98,13 @@
 						</div>
 					</fieldset>
 				</td>
+				<td>
+					<label for="valid_fail_text">
+						Text to show when validation fails
+						<input type="text" name="valid_fail_text" id="valid_fail_text" value="<?=$vals['valid_fail_text']?>" class="regular-text">
+						<p class="description">i.e. Submit</p>
+					</label>
+				</td>
 			</tr>
 			<tr>
 				<th scope="row">Button Display Settings</th>
