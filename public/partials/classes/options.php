@@ -91,6 +91,9 @@ class scf_Options {
 		// Does the FontAwesome CDN need to be included?
 		$arr['include_fontawesome'] = (boolean) get_option('scf_include_fontawesome', '0' );
 
+		// Get the text for the submit button
+		$arr['submit_text'] = get_option('scf_submit_text', 'Submit');
+
 		// Get the extra class for the submit button
 		$arr['submit_class'] = get_option('scf_submit_class', 'btn-primary');
 
