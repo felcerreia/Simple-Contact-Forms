@@ -56,7 +56,7 @@
 				<th></th>
 				<td>
 					<label for="submit_text">
-						Submit Button Additional Classes
+						Submit Button Text
 						<input type="text" name="submit_text" id="submit_text" value="<?=$vals['submit_text']?>" class="regular-text">
 						<p class="description">i.e. Submit</p>
 					</label>
