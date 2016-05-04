@@ -105,6 +105,9 @@ class scf_Options {
 
 		// Does the reCAPTCHA script need to be loaded?
 		$arr['include_recaptcha'] = (boolean) get_option('scf_include_recaptcha', '0' );
+		
+		// Get the text for failed validation
+		$arr['valid_fail_text'] = get_option('scf_valid_fail_text' , 'There are some errors on the form. Please correct and re-submit.')
 
 		// Use a button?
 		$arr['button'] = (boolean) get_option('scf_display_button');
