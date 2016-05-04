@@ -23,7 +23,7 @@ class SCFOptions {
 			'form_styling' 			=> 'bootstrap' ,
 			'include_bootstrap' 		=> '0' ,
 			'include_fontawesome' 		=> '0' ,
-			'submit_text'			=> 'Submit'
+			'submit_text'			=> 'Submit' ,
 			'submit_class' 			=> 'btn-primary' ,
 			'success_msg' 			=> '<h2 style="text-align: center;">Thanks for completing the form!</h2><p>We will be in touch shortly.</p>' ,
 			'validation'			=> 'recaptcha' ,
