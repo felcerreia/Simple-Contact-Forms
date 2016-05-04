@@ -15,8 +15,8 @@ class SCFOptions {
 		$this->options = array();
 
 		$this->fields = array(
-			'form' 					=> '1' ,
-			'send_to' 				=> '' ,
+			'form' 				=> '1' ,
+			'send_to' 			=> '' ,
 			'form_title' 			=> 'Enquire now!' ,
 			'email_subject' 		=> 'Website Enquiry' ,
 			'email_recipients'		=> get_bloginfo('admin_email'),
@@ -26,6 +26,7 @@ class SCFOptions {
 			'submit_text'			=> 'Submit' ,
 			'submit_class' 			=> 'btn-primary' ,
 			'success_msg' 			=> '<h2 style="text-align: center;">Thanks for completing the form!</h2><p>We will be in touch shortly.</p>' ,
+			'valid_fail_text'		=> 'There are some errors on the form. Please correct and re-submit.'
 			'validation'			=> 'recaptcha' ,
 			'include_recaptcha'		=> '0' ,
 			'display_button' 		=> '0' ,
