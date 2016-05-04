@@ -286,7 +286,7 @@ class scf_Content {
 			                        $content .= '<input type="hidden" name="form_id" value="form_'.$this->form_id.'">';
 
 			                		// Set the submit button
-			                        $content .= '<button type="submit" class="btn btn-block ' . $options['submit_class'] . '">Submit</button>';
+			                        $content .= '<button type="submit" class="btn btn-block ' . $options['submit_class'] . '">' . $options['submit_text'] . '</button>';
 
 		                        // Close the column
 			                	$content .= '</div>';
