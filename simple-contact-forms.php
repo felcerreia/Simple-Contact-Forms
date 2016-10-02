@@ -24,7 +24,7 @@
  * Text Domain:       simple-contact-forms
  * Domain Path:       /languages
  * Requires at least: 3.8
- * Tested up to: 	  4.6.1
+ * Tested up to:      4.6.1
  */
 
 // If this file is called directly, abort.
