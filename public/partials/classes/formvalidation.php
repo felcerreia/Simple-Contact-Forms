@@ -124,7 +124,7 @@ class scf_FormValidation {
 			// Form is probably using maths. 
 			foreach($fields as $field) {
 
-				if( $field['slug'] == 'maths' && $field['value'] != 4 ) return "The maths test was incorrect. Please try it again";
+				if( $field['slug'] == 'maths' && $field['value'] != 11 ) return "The maths test was incorrect. Please try it again";
 
 			}
 

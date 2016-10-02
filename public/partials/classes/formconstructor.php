@@ -102,12 +102,15 @@ class scf_FormConstructor {
 			$this->fields = array();
 			$this->fields = scf_Fields::getSCFFields($optionClass->inputtedfields, $this->options, true);
 
-			// Set the redirect
-			if( $this->options['send_to_url'] === '' ) $this->options['send_to_url'] = get_permalink();
-
 			// Redirect to another page after completing the submission and force the success message (if there is one)
-			wp_redirect( $this->options['send_to_url'] . '?scf_success=true' ); 
-			die();
+			if( $this->options['send_to_url'] === '' ) $this->options['send_to_url'] = strtok($_SERVER["REQUEST_URI"],'?');
+			$parameters = !empty($_GET) ? http_build_query(array_merge($_GET, array('scf_success'=>'true'))) : 'scf_success=true';
+
+			// Fallback on Javascript because the headers have already been sent
+			$string = '<script type="text/javascript">';
+		    $string .= 'window.location = "' . $this->options['send_to_url'] . '?' . $parameters . '"';
+		    $string .= '</script>';
+		    echo $string;
 
 		} elseif( isset($_GET['scf_success']) && $_GET['scf_success'] === 'true') {
 

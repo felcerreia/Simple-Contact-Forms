@@ -27,5 +27,6 @@ $completions_table->prepare_items();
 
 <h3>Completions</h3>
 <div style="float: left;">
+	<a href="#" id="exportCSV">Export to CSV</a>
 	<?php $completions_table->display();?>
 </div>

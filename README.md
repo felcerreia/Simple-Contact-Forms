@@ -5,8 +5,8 @@
 Contributors: owenr88
 Tags: contact forms, enquiry forms, contact, forms
 Requires at least: 3.8
-Tested up to: 4.5
-Stable tag: 1.4.2
+Tested up to: 4.6.1
+Stable tag: 1.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,7 +16,7 @@ This plugin is designed to strip all the hassle so you can insert contact forms 
 
 Simple Contact Forms is designed to strip all the hassle so you can insert contact forms where you want and how you want. It's incredibly simple to set up and use so you can spend more time working on the harder parts of your site.
 
-Dropping Simple Contact Forms into your site allows users to complete your forms and interact with your site. A successful completion will trigger an email notification to you and create a record in the database, which is viewable in the WordPress Admin area.
+Dropping Simple Contact Forms into your site allows users to complete your forms and interact with your site. A successful completion will trigger an email notification to you and create a record in the database, which is viewable in the WordPress Admin area (can also be exported by CSV).
 
 Build your own contact forms with a number of configurable drag and drop fields. Fields can also be required for successful submission or excluded completely to be saved for later. The fields include:
 
@@ -64,6 +64,12 @@ Yes. Head over to the [GitHub](https://github.com/owenr88/Simple-Contact-Forms) 
 4. Form output
 
 ## Changelog
+
+### 1.5.0
+* Added button to export completions to a CSV file
+* Fixed slash escaping on form titles
+* Fixed headers error on redirecting
+* Testing for WP 4.6.1
 
 ### 1.4.2
 * Form now stays open if there's an error to show (regardless of the button and form collapse options)

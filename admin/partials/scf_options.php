@@ -71,7 +71,7 @@ class SCFOptions {
 		};
 
 		// Get the option from the database
-		$option = get_option( 'scf_' . $slug , $default );
+		$option = stripslashes(get_option( 'scf_' . $slug , $default ));
 
 		// Check if it's the table and it's not a string
 		if( $slug === 'table_fields' && !is_array($option) ) $option = maybe_unserialize($option);

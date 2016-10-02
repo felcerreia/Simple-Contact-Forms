@@ -71,13 +71,13 @@ class scf_Options {
 		$arr['form'] = (boolean) get_option('scf_form', '0');
 
 		// Location for the form to be sent to
-		$arr['send_to_url'] = get_option('scf_send_to', get_permalink());
+		$arr['send_to_url'] = stripslashes(get_option('scf_send_to', get_permalink()));
 
 		// Get the form title
-		$arr['form_title'] = get_option('scf_form_title', '<h2>Enquire now!</h2>');
+		$arr['form_title'] = stripslashes(get_option('scf_form_title', 'Enquire now!'));
 
 		// Get the email subject
-		$arr['email_subject'] = get_option('scf_email_subject', 'Website Enquiry');
+		$arr['email_subject'] = stripslashes(get_option('scf_email_subject', 'Website Enquiry'));
 
 		// Get the email recipients
 		$arr['email_recipients'] = get_option('scf_email_recipients', get_bloginfo('admin_email'));
@@ -95,7 +95,7 @@ class scf_Options {
 		$arr['submit_class'] = get_option('scf_submit_class', 'btn-primary');
 
 		// Get the success message
-		$arr['success_msg'] = get_option('scf_success_msg', 'Thanks!');
+		$arr['success_msg'] = stripslashes(get_option('scf_success_msg', 'Thanks!'));
 
 		// Use reCAPTCHA or maths test
 		$arr['validation'] = get_option('scf_validation', 'recaptcha');
