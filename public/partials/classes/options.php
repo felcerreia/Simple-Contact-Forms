@@ -91,6 +91,9 @@ class scf_Options {
 		// Does the FontAwesome CDN need to be included?
 		$arr['include_fontawesome'] = (boolean) get_option('scf_include_fontawesome', '0' );
 
+		// Get the text for the submit button
+		$arr['submit_text'] = get_option('scf_submit_text', 'Submit');
+
 		// Get the extra class for the submit button
 		$arr['submit_class'] = get_option('scf_submit_class', 'btn-primary');
 
@@ -102,6 +105,9 @@ class scf_Options {
 
 		// Does the reCAPTCHA script need to be loaded?
 		$arr['include_recaptcha'] = (boolean) get_option('scf_include_recaptcha', '0' );
+		
+		// Get the text for failed validation
+		$arr['valid_fail_text'] = get_option('scf_valid_fail_text' , 'There are some errors on the form. Please correct and re-submit.')
 
 		// Use a button?
 		$arr['button'] = (boolean) get_option('scf_display_button');

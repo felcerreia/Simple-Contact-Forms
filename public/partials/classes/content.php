@@ -125,7 +125,7 @@ class scf_Content {
 			        }
 
 		        	// Add the validation error to the content and hide it
-		        	$content .= '<div class="alert alert-danger error-notice" role="alert">There are some errors on the form. Please correct and re-submit.</div>';
+		        	$content .= '<div class="alert alert-danger error-notice" role="alert">' . $options['valid_fail_text'] . '</div>';
 
 		        	// Open the actual form
 		            $content .= '<form class="form-horizontal row" name="simple_contact_form" method="post" action="" id="form-holder" onsubmit="return validateForm(\'form_'.$this->form_id.'\')" >';
@@ -289,7 +289,7 @@ class scf_Content {
 			                        $content .= '<input type="hidden" name="form_id" value="form_'.$this->form_id.'">';
 
 			                		// Set the submit button
-			                        $content .= '<button type="submit" class="btn btn-block ' . $options['submit_class'] . '">Submit</button>';
+			                        $content .= '<button type="submit" class="btn btn-block ' . $options['submit_class'] . '">' . $options['submit_text'] . '</button>';
 
 		                        // Close the column
 			                	$content .= '</div>';

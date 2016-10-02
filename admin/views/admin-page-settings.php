@@ -55,6 +55,16 @@
 			<tr>
 				<th></th>
 				<td>
+					<label for="submit_text">
+						Submit Button Text
+						<input type="text" name="submit_text" id="submit_text" value="<?=$vals['submit_text']?>" class="regular-text">
+						<p class="description">i.e. Submit</p>
+					</label>
+				</td>
+			</tr>
+			<tr>
+				<th></th>
+				<td>
 					<label for="submit_class">
 						Submit Button Additional Classes
 						<input type="text" name="submit_class" id="submit_class" value="<?=$vals['submit_class']?>" class="regular-text">
@@ -87,6 +97,13 @@
 							</label>
 						</div>
 					</fieldset>
+				</td>
+				<td>
+					<label for="valid_fail_text">
+						Text to show when validation fails
+						<input type="text" name="valid_fail_text" id="valid_fail_text" value="<?=$vals['valid_fail_text']?>" class="regular-text">
+						<p class="description">i.e. Submit</p>
+					</label>
 				</td>
 			</tr>
 			<tr>
