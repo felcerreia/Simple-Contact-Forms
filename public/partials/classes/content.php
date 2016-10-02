@@ -101,8 +101,11 @@ class scf_Content {
 		// Return false if the success message has already been created - we don't need the form!
 		if( $this->successMessageReady ) return false;
 
+		// Check if there are any problems
+		$any_problems = (!empty($errors) || $isresp) && $formcompleted;
+
 		// Open the wrapping divs - .in SHOWS the content
-	    $content = '<div id="form_'.$this->form_id.'" class="scf_form bs-component ' . ($options['form_collapsed'] && $options['button'] ? 'collapse' : 'collapse in' ) . '">';
+	    $content = '<div id="form_'.$this->form_id.'" class="scf_form bs-component ' . ($options['form_collapsed'] && $options['button'] && !$any_problems ? 'collapse' : 'collapse in' ) . '">';
 
 		    // Open the row
 		    $content .= '<div class="row">';
