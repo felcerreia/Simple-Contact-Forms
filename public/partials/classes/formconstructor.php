@@ -110,7 +110,7 @@ class scf_FormConstructor {
 			$string = '<script type="text/javascript">';
 		    $string .= 'window.location = "' . $this->options['send_to_url'] . '?' . $parameters . '"';
 		    $string .= '</script>';
-		    echo $string;
+		    $contentClass->addToPageContent($string);
 
 		} elseif( isset($_GET['scf_success']) && $_GET['scf_success'] === 'true') {
 
@@ -125,9 +125,6 @@ class scf_FormConstructor {
 
 		// Add the js script to the form content
 		$contentClass->addValidationScript($this->fields);
-
-		// Add the recaptcha script to the form content (if required)
-		if($this->options['validation'] === 'recaptcha') $contentClass->checkRecaptchaScript();
 
 		// Set that there are multiple forms
 		$multiple_forms = true;

@@ -80,7 +80,7 @@ class scf_Content {
 		if( $options['include_recaptcha'] ) {
 
 			// Include reCAPTCHA styles
-			wp_enqueue_script('scf_recaptcha-js', 'https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit#asyncload#deferload');
+			wp_enqueue_script('scf_recaptcha-js', 'https://www.google.com/recaptcha/api.js#asyncload#deferload');
 
 		}
 
@@ -251,7 +251,7 @@ class scf_Content {
 		                    		$content .= '<div class="'.$nextclass.' '.$offset.'">';
 
 		                    			// Add the content
-		                    			$content .= '<div id="recaptcha_form_'.$this->form_id.'" class="recaptcha-box" site-key="'.$options['public_key'].'"></div>';
+		                    			$content .= '<div id="recaptcha_form_'.$this->form_id.'" class="g-recaptcha" data-sitekey="'.$options['public_key'].'"></div>';
 
 	                    			// Close the row
 	                    			$content .= '</div>';
@@ -460,38 +460,6 @@ class scf_Content {
 
 		// Add the new content to the overall page content
 		$this->pageContent .= $content;
-
-	}
-
-
-
-	/**
-	 * Add the script for recaptcha if it hasn't already been defined
-	 */
-	public function checkRecaptchaScript() {
-
-		global $multiple_forms;
-
-		// Return if it's already been defined
-		if( isset($multiple_forms) && $multiple_forms === true ) return false;
-
-		// Add the script to the content
-		$script = <<<EOD
-
-			<script type="text/javascript">
-			    var CaptchaCallback = function(){
-			    	var $ = jQuery;
-			    	$(document).find('.recaptcha-box').each(function(i,val,array) {
-			    		var id = $(this).attr('id');
-			    		var site_key = $(this).attr('site-key');
-			        	grecaptcha.render(id, {'sitekey' : site_key});
-			    	})
-			    };
-			</script>
-
-EOD;
-
-		$this->addToPageContent($script);
 
 	}
 
