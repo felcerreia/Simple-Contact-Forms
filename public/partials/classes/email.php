@@ -75,7 +75,7 @@ class scf_Email {
 
         // Default to 'Enquirer' if there's nothing there
         if( !isset($sender_name) ) $sender_name = 'Enquirer';
-        if( !isset($sender_email) ) $sender_email = empty($sender_email) ? 'enquiry@biglemoncreative.co.uk' : $senders[0]['email'];
+        if( !isset($sender_email) ) $sender_email = empty($senders) ? 'enquiry@biglemoncreative.co.uk' : $senders[0]['email'];
 
         // Set the from details
         $headers .= "From: $sender_name <$sender_email>\r\n";

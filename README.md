@@ -6,7 +6,7 @@ Contributors: owenr88
 Tags: contact forms, enquiry forms, contact, forms
 Requires at least: 3.8
 Tested up to: 4.6.1
-Stable tag: 1.6.3
+Stable tag: 1.6.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,6 +66,9 @@ Yes. Head over to the [GitHub](https://github.com/owenr88/Simple-Contact-Forms) 
 4. Form output
 
 ## Changelog
+
+### 1.6.4
+* Change tiny bug to catch if there are any senders
 
 ### 1.6.3
 * New way of calling reCaptcha with data-sitekey instead of in a jQuery onLoad
