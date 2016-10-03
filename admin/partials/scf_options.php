@@ -25,9 +25,9 @@ class SCFOptions {
 			'include_fontawesome' 		=> '0' ,
 			'submit_text'			=> 'Submit' ,
 			'submit_class' 			=> 'btn-primary' ,
-			'success_msg' 			=> '<h2 style="text-align: center;">Thanks for completing the form!</h2><p>We will be in touch shortly.</p>' ,
-			'valid_fail_text'		=> 'There are some errors on the form. Please correct and re-submit.'
-			'validation'			=> 'recaptcha' ,
+			'success_msg' 			=> '<h2 style="text-align: center;">Thanks for completing the form!</h2><p>We will be in touch shortly.</p>',
+			'valid_fail_text'		=> 'There are some errors on the form. Please correct and re-submit.',
+			'validation'			=> 'maths' ,
 			'include_recaptcha'		=> '0' ,
 			'display_button' 		=> '0' ,
 			'default_collapse'		=> '0' ,
