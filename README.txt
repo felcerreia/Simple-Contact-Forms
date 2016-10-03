@@ -3,7 +3,7 @@ Contributors: owenr88
 Tags: contact forms, enquiry forms, contact, forms
 Requires at least: 3.8
 Tested up to: 4.6.1
-Stable tag: 1.5.0
+Stable tag: 1.6.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,11 +28,13 @@ The plugin also has a number of options configurable in the WordPress admin area
 * Form Styling (Bootstrap only for now)
 * Form Validation (reCAPTCHA and Maths test)
 * Form Collapsable by a button
+* Submit Button Text
 * Button Text & Icon
 * Button Styling
 * Destination Pages
 * Email Address for Notification
 * Email Subject for Notification
+* Error Message Content
 * Success Message Content
 
 Simple Contact Forms was created and is managed by [Big Lemon Creative](http://www.biglemoncreative.co.uk).
@@ -61,6 +63,10 @@ Yes. Head over to the [GitHub](https://github.com/owenr88/Simple-Contact-Forms) 
 4. Form output
 
 == Changelog ==
+
+= 1.6.0 =
+* Text box to change message when form values are wrong - Thanks to @jp-io
+* Text box to change submit button text - Thanks to @jp-io
 
 = 1.5.0 =
 * Added button to export completions to a CSV file
