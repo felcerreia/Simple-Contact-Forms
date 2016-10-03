@@ -65,7 +65,7 @@ class scf_Email {
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-        // Determine the from details. Check for name field, then email field, then default to 'Enquirer'
+        // Determine the from details. Check for name field, then email field
         foreach($fields as $field) {
 
         	if( $field['type'] == 'name' && isset($field['value']) && !isset($sender_name)) $sender_name = $field['value'];
@@ -73,8 +73,12 @@ class scf_Email {
             if( $field['type'] == 'email' && isset($field['value']) && !isset($sender_email) ) $sender_email = $field['value'];
         }
 
+        // Default to 'Enquirer' if there's nothing there
+        if( !isset($sender_name) ) $sender_name = 'Enquirer';
+        if( !isset($sender_email) ) $sender_email = empty($sender_email) ? 'enquiry@biglemoncreative.co.uk' : $senders[0]['email'];
+
         // Set the from details
-        $headers .= "From: " . (!isset($sender_name) ? $sender_name : 'Enquirer') . (!isset($sender_email) ? ' <' . $sender_email . '>' : '') . "\r\n";
+        $headers .= "From: $sender_name <$sender_email>\r\n";
 
         // Set the name checker
         $nameIsAbandon = false;
