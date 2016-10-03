@@ -96,14 +96,12 @@
 								<input type="checkbox" name="include_recaptcha" value="1" id="include_recaptcha" <?=($vals['include_recaptcha']=='1'?'checked':'')?>> Include the reCAPTCHA php and js files
 							</label>
 						</div>
+						<br>
+						<label for="valid_fail_text">
+							Text to show when validation fails
+							<input type="text" name="valid_fail_text" id="valid_fail_text" value="<?=$vals['valid_fail_text']?>" class="regular-text">
+						</label>
 					</fieldset>
-				</td>
-				<td>
-					<label for="valid_fail_text">
-						Text to show when validation fails
-						<input type="text" name="valid_fail_text" id="valid_fail_text" value="<?=$vals['valid_fail_text']?>" class="regular-text">
-						<p class="description">i.e. Submit</p>
-					</label>
 				</td>
 			</tr>
 			<tr>
